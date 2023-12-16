@@ -5,7 +5,7 @@ import { MemberComponent } from './Component/member/member.component';
 
 const routes: Routes = [
   {path:"competition",component:CompetitionComponent},
-  {path:"member",component:MemberComponent}
+  {path:"member/:code",component:MemberComponent}
 ];
 
 @NgModule({

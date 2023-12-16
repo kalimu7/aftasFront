@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faPlusCircle,faCalendar,faPlayCircle,faUsers,faLocationDot,faRankingStar,faFishFins } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AftasAngular';
+  rank = faRankingStar;
+  users = faUsers;
+  fish = faFishFins;
 }

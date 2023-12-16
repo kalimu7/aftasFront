@@ -1,0 +1,10 @@
+.btnContactSubmit
+{
+    width: 187.33px;
+    border-radius: 1rem;
+    padding: 1.5%;
+    color: #fff;
+    background-color: #102e4e;
+    border: none;
+    cursor: pointer;
+}

@@ -1,37 +1,89 @@
 <div class="p-5">
-    <div class="addCompetition d-flex justify-content-between my-2">
-      <h5>Competition </h5> 
-      <fa-icon [icon]="facofe" class="fs-4" (click)="openDialog()" ></fa-icon>
-    </div>
-    <table class="table align-middle mb-0 bg-white text-center">
-        <thead class="bg-light">
-          <tr >
-            <th>Competition</th>
-            <th>Date <fa-icon [icon]="date" class="fs-6"></fa-icon></th>
-            <th>Status</th>
-            <th>City</th>
-            <th>Competators</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let compet of competitions" class="text-center">
-            <td>
-                {{compet.code}}
-            </td>
-            <td>
-                {{compet.date}}
-            </td>
-            <td>
-              empty
-            </td>
-            <td>
-              {{compet.location}}
-            </td>
-            <td>
-                {{compet.numberOfParticipants}}
-              </td>
-          </tr>
-          
-        </tbody>
-      </table>
+  <div class="addCompetition d-flex justify-content-between ">
+    <h5>Competition </h5>
+    <fa-icon [icon]="facofe" class="fs-4" (click)="openDialog()"></fa-icon>
+    <!-- <fa-icon [icon]="facofe" class="fs-4" (click)="show()"></fa-icon> -->
   </div>
+
+
+  <!-- start card -->
+    <div class="row  ">
+    
+      <div class="col-sm-12 col-md-6 col-lg-4 mb-4 " *ngFor="let compet of competitions">
+        <div  class="card text-dark card-has-bg click-col "
+          style="background-image:url('../../../assets/images/sx.jpg');">
+          
+          <div class="card-img-overlay d-flex flex-column">
+            <div class="card-body text-center">
+              <small class="card-meta mb-2 text-white text-center">{{compet.code}}</small>
+              <h4 class="card-title mt-0 "></h4>
+            </div>
+            <div class="card-footer">
+              <div class="media">
+                <div class="date d-flex justify-content-between text-white">
+                  <fa-icon [icon]="date" class="fs-6"></fa-icon>
+                  <p>{{compet.date}}</p>
+                </div>
+                <div class="d-flex justify-content-between text-white">
+                  <div>
+                    <fa-icon [icon]="users" class="fs-6"></fa-icon>
+                    {{compet.numberOfParticipants}}
+                  </div>
+                  <div>
+                    <fa-icon [icon]="city" class="fs-6"></fa-icon>
+                    {{compet.location}}
+                  </div>
+                </div>
+                <div class="media-body text-center mt-2">
+                  <button routerLink="/member/{{compet.code}}" class="btn btn-outline-light">View Members <fa-icon [icon]="play" class="fs-6"></fa-icon></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+
+  <!-- enf of cards -->
+  <!-- <table class="table align-middle mb-0 bg-white text-center">
+
+    <thead class="bg-light">
+      <tr>
+        <th>Competition</th>
+        <th>Date <fa-icon [icon]="date" class="fs-6"></fa-icon></th>
+        <th>Status</th>
+        <th>City</th>
+        <th>Competators</th>
+        <th>More Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let compet of competitions" class="text-center">
+        <td>
+          {{compet.code}}
+        </td>
+        <td>
+          {{compet.date}}
+        </td>
+        <td>
+          empty
+        </td>
+        <td>
+          {{compet.location}}
+        </td>
+        <td>
+          {{compet.numberOfParticipants}}
+        </td>
+        <td>
+          <button routerLink="/member/{{compet.code}}" class="btn btn-outline-dark">See Members</button>
+        </td>
+      </tr>
+
+    </tbody>
+  </table> -->
+  <mat-paginator [length]=totlaPage [pageSize]="1" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page"
+    (page)="onPageChange($event)">
+  </mat-paginator>
+
+
+</div>

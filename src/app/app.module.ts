@@ -12,13 +12,24 @@ import { DialogContentComponent } from './Component/dialog-content/dialog-conten
 import { MatNativeDateModule } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatDatepickerModule } from '@angular/material/datepicker';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { DialogmemberComponent } from './Component/dialogmember/dialogmember.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { DialoghuntingComponent } from './Component/dialoghunting/dialoghunting.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     CompetitionComponent,
     MemberComponent,
-    DialogContentComponent
+    DialogContentComponent,
+    DialogmemberComponent,
+    DialoghuntingComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -29,7 +40,14 @@ import { FormsModule } from '@angular/forms';
     MatDialogModule,
     MatNativeDateModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatSlideToggleModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatPaginatorModule,
+    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

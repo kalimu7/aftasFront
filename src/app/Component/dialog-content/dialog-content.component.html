@@ -1,37 +1,45 @@
-<div class="container contact-form">
+<div class="container contact-form "style="overflow: hidden; ">
     
-    <h5 class="text-center text-white">Create a Competition</h5>
+    <h5 class="text-center  mt-4" style="color: #5377f8b0;">Create a Competition</h5>
     <div class="container contact-form">
-        <h5 class="text-center text-white">Create a Competition</h5>
-        <form [formGroup]="myForm" (submit)="Submit()">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <input type="date" formControlName="date" class="form-control" placeholder="Date" required />
-              </div>
-              <div class="form-group">
-                <input type="time" formControlName="starttime" class="form-control" placeholder="Start Time" required />
-              </div>
-              <div class="form-group">
-                <input type="text" formControlName="location" class="form-control" placeholder="Location *" required />
-              </div>
+
+      <form [formGroup]="myForm" (submit)="Submit()">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="lb" for="date">Date:</label>
+              <input type="date" formControlName="date" class="form-control" min="{{ getCurrentDate() }}" placeholder="Select Date" />
             </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <input type="number" formControlName="numParticipants" class="form-control" placeholder="Number Of Participants *" required />
-              </div>
-              <div class="form-group">
-                <input type="time" formControlName="endtime" class="form-control" placeholder="End Time *" required />
-              </div>
-              <div class="form-group">
-                <input type="number" formControlName="amount" class="form-control" placeholder="Amount *" required />
-              </div>
+            <div class="form-group">
+              <label class="lb" for="startTime">Start Time:</label>
+              <input type="time" formControlName="startTime" class="form-control" placeholder="Enter Start Time" />
+            </div>
+            <div class="form-group">
+              <label class="lb" for="location">Location:</label>
+              <input type="text" formControlName="location" class="form-control" placeholder="Enter Location *" />
             </div>
           </div>
-          <div class="form-group text-end mt-5">
-            <input type="submit" name="btnSubmit" class="btnContact" value="Add Competition" />
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="lb" for="numParticipants">Number Of Participants:</label>
+              <input type="number" formControlName="numberOfParticipants" class="form-control" placeholder="Enter Number Of Participants *" />
+            </div>
+            <div class="form-group">
+              <label class="lb" for="endTime">End Time:</label>
+              <input type="time" formControlName="endTime" class="form-control" placeholder="Enter End Time *" />
+            </div>
+            <div class="form-group">
+              <label class="lb" for="amount">Amount:</label>
+              <input type="number" formControlName="amount" class="form-control" placeholder="Enter Amount *" />
+            </div>
           </div>
-        </form>
+        </div>
+        <div class="form-group text-end mt-5">
+          <input type="submit" name="btnSubmit" class="btnContact" value="Add Competition" />
+        </div>
+      </form>
+        
+
       </div>
       
       
