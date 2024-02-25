@@ -15,9 +15,15 @@ export class MemberService {
     GetMembers(code : String,page : number):Observable<any>{
         return this.http.get(`${this.url}member/${code}/${page}`);
     }
+
     InsertMember(mem : Member):Observable<any>{
         return this.http.post(`${this.url}member`,mem);
+      }
+      
+    AssignMemeber(member : any){
+      return this.http.post(`${this.url}member/assing`,member);
     }
+
 
     GetFish():Observable<any>{
       return this.http.get(`${this.url}fish`);

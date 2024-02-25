@@ -14,6 +14,7 @@ export class CompetitionService {
     GetCompetition(page : number):Observable<any>{
         return this.http.get(`${this.url}competition/${page}`);
     }
+    
     InsertCompetition(comp : Competition):Observable<any>{
         return this.http.post(`${this.url}competition`,comp);
     }
