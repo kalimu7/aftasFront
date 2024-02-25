@@ -13,7 +13,7 @@ import { CompetitionService } from 'src/app/Service/competition.service';
   styleUrls: ['./dialog-content.component.css'],
   
 })
-export class DialogContentComponent implements OnInit{
+export class DialogContentComponent implements OnInit {
   constructor(private fb :FormBuilder,private service:CompetitionService,private router : Router,private toastr : ToastrService){}
   myForm!:FormGroup;
 
@@ -83,7 +83,7 @@ export class DialogContentComponent implements OnInit{
 
 
   navigateToCompetition() {
-    this.router.navigate([`/competition`]).then(()=>{
+    this.router.navigate([`dashbord/competition`]).then(()=>{
       window.location.reload();
     });
   }

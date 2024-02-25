@@ -26,6 +26,8 @@ import { DashboardComponent } from './Component/dashboard/dashboard.component';
 import { RegisterComponent } from './Component/register/register.component';
 import { LoginInterceptor } from './Interceptor/login.interceptor';
 import { AdminDashboradComponent } from './Component/admin-dashborad/admin-dashborad.component';
+import { CompetitionAdherentComponent } from './Component/competition-adherent/competition-adherent.component';
+import { PoduimMemberComponent } from './Component/poduim-member/poduim-member.component';
 
 
 @NgModule({
@@ -41,6 +43,8 @@ import { AdminDashboradComponent } from './Component/admin-dashborad/admin-dashb
     DashboardComponent,
     RegisterComponent,
     AdminDashboradComponent,
+    CompetitionAdherentComponent,
+    PoduimMemberComponent,
     
   ],
   imports: [

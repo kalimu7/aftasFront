@@ -8,7 +8,7 @@ export const juryGuard: CanActivateFn = (route, state) => {
   if(Token !== null){
     const tokenPayload = jwtDecode(Token);
     console.log("role decoded " + tokenPayload.roles);
-    if(tokenPayload.roles === '[Jury]'){
+    if(tokenPayload.roles === '[Jury]' || tokenPayload.roles === '[Manager]'){
         return true;
     }
     const route = inject(Router);

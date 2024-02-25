@@ -1,0 +1,64 @@
+.body{
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+}
+  .container {
+    height: 92vh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+  
+  .podium__item {
+    width: 200px;
+  }
+  
+  .podium__rank {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    color: #fff;
+  }
+  
+  .podium__city {
+    text-align: center;
+    padding: 0 .5rem;
+  }
+  
+  .podium__number {
+    width: 27px;
+    height: 75px;
+  }
+  
+  .podium .first {
+    min-height: 150px;
+    background: #5377f8b0;
+  background: 
+    linear-gradient(333deg, 
+    #5377f8b0 0%, 
+    #5377f8b0 13%, 
+    #5377f8b0 53%, 
+    #7f97efb0 100%);
+  }
+  
+  .podium .second {
+    min-height: 100px;
+    background: #102e4ecb;
+  }
+  
+  .podium .third {
+    min-height: 80px;
+    background: #476df6;
+  }
+  .btnContactSubmit
+{
+    width: 187.33px;
+    border-radius: 1rem;
+    padding: 1.5%;
+    color: #fff;
+    background-color: #102e4e;
+    border: none;
+    cursor: pointer;
+}

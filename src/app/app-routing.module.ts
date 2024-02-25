@@ -10,13 +10,16 @@ import { AdminDashboradComponent } from './Component/admin-dashborad/admin-dashb
 import { juryGuard } from './Guards/jury.guard';
 import { adminGuard } from './Guard/admin.guard';
 import { adherantGuard } from './Guards/adherant.guard';
+import { CompetitionAdherentComponent } from './Component/competition-adherent/competition-adherent.component';
+import { PoduimMemberComponent } from './Component/poduim-member/poduim-member.component';
 
 const routes: Routes = [
   
   {path:"login",component:LoginComponent},
   {path:"register",component:RegisterComponent},
   {path:"admin",component:AdminDashboradComponent,canActivate : [adminGuard]},
-  {path:"competition",component:CompetitionComponent,canActivate : [adherantGuard,juryGuard,adminGuard]},
+  {path:"competition",component:CompetitionAdherentComponent,canActivate : [adherantGuard]},
+  {path:"podium/:code",component:PoduimMemberComponent,canActivate : [adherantGuard]},
   {path:"dashbord",component:DashboardComponent,canActivate : [juryGuard],children : [
     {path:"competition",component:CompetitionComponent,canActivate : [juryGuard]},
     {path:"member/:code",component:MemberComponent,canActivate : [juryGuard]},

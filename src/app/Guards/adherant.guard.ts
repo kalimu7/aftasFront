@@ -8,7 +8,7 @@ export const adherantGuard: CanActivateFn = (route, state) => {
   if(Token !== null){
     const tokenPayload = jwtDecode(Token);
     console.log("role decoded " + tokenPayload.roles);
-    if(tokenPayload.roles === '[Adherent]'){
+    if(tokenPayload.roles === '[Adherent]' || tokenPayload.roles === '[Manager]' || tokenPayload.roles === '[Jury]'){
         return true;
     }
     const route = inject(Router);
