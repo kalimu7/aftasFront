@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Member } from 'src/app/Model/member';
 import { MemberService } from 'src/app/Service/member.service';
 import { ActivatedRoute } from '@angular/router';
-import { faPlusCircle,faCalendar,faAddressCard,faEarthAfrica } from '@fortawesome/free-solid-svg-icons';
+import { faPlusCircle,faCalendar,faAddressCard,faEarthAfrica,faRankingStar } from '@fortawesome/free-solid-svg-icons';
 import { DialogService } from 'src/app/Service/dialog.service';
 import { PageEvent } from '@angular/material/paginator';
 
@@ -17,13 +17,15 @@ export class MemberComponent implements OnInit{
   date = faCalendar;
   identity = faAddressCard;
   competitioncode :any;
+  podium = faRankingStar ;
   members : Member[] = [];
   totalPage :any;
   pageSize = 6;
   pageIndex = 0;
-  constructor(private service:MemberService,private route: ActivatedRoute,private dialog : DialogService) {}
+  constructor(private service:MemberService,private route: ActivatedRoute,private dialog : DialogService,) {}
   ngOnInit(): void {
     this.competitioncode = this.route.snapshot.paramMap.get('code');
+
     console.log("hello world member");
     console.log(this.competitioncode);
     this.fetchMembers(this.competitioncode);

@@ -10,7 +10,7 @@ import { DialoghuntingComponent } from '../Component/dialoghunting/dialoghunting
 export class DialogService {
 
   constructor(private dialog:MatDialog) { }
-
+  dialogRef : any;
   openDialog():void{
     this.dialog.open(DialogContentComponent,{
       width :'600px',
@@ -18,7 +18,7 @@ export class DialogService {
     })
   }
   openDialogMember(data:any){
-    this.dialog.open(DialogmemberComponent,{
+    this.dialogRef = this.dialog.open(DialogmemberComponent,{
       data:data,
       width :'600px',
       maxHeight:'90vh'
@@ -33,8 +33,11 @@ export class DialogService {
       width :'600px',
       maxHeight:'90vh'
     })
-
     
+  }
+  
+  closeDialog() {
+    this.dialogRef.close();
   }
 
 }

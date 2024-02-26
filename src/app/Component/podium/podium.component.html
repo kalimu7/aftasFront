@@ -1,0 +1,115 @@
+
+<div class="container podium d-flex justify-content-center ">
+    <div class="podium__item ">
+      <!-- *********member******* *ngFor="let member of members"********* -->
+
+      <div class="col-lg-4 col-sm-12 col-md-6  mb-1  mb-4 " *ngIf="Members && Members[1] && Members[1].rank==2 " >
+        <div class="card mb-1" style="width: 200px;">
+          <div class="card-body text-center ">
+            <div class="d-flex justify-content-between p-2">
+      
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+                class="rounded-circle img-fluid" style="width: 50px;">
+              <div>
+                <p class="my-1">{{Members[1].name}}</p>
+                <p class="text-muted mb-1">{{Members[1].nationality}}</p>
+              </div>  
+            </div>
+            <div>
+              <div class="d-flex justify-content-between">
+                <p  class="text-muted mb-1">{{Members[1].identity}}</p>
+                <p>{{Members[1].identityNumber}}</p>
+              </div>
+              <div class="d-flex justify-content-between">
+                  <p>date</p>
+                  <p  class="text-muted mb-1" >{{Members[1].accessionDate}}</p>
+              </div>
+      
+            </div>
+            <div class="d-flex justify-content-center mb-1">
+              <button type="button" class="btnContactSubmit"  >{{Members[1].score}}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <!-- *********member**************** -->
+        
+
+
+      <div class="podium__rank second">2</div>
+    </div>
+    <div class="podium__item">
+        <div class="col-lg-4 col-sm-12 col-md-6  mb-1  mb-4 " *ngIf="Members && Members[0] && Members[0].rank==1" >
+            <div class="card mb-1" style="width: 200px;">
+              <div class="card-body text-center ">
+                <div class="d-flex justify-content-between p-2">
+          
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+                    class="rounded-circle img-fluid" style="width: 50px;">
+                  <div>
+                    <p class="my-1">{{Members[0].name}}</p>
+                    <p class="text-muted mb-1">{{Members[0].nationality}}</p>
+                  </div>  
+                </div>
+                <div>
+                  <div class="d-flex justify-content-between">
+                    <p  class="text-muted mb-1">{{Members[0].identity}}</p>
+                    <p>{{Members[0].identityNumber}}</p>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                      <p>date</p>
+                      <p  class="text-muted mb-1">{{Members[0].accessionDate}}</p>
+                  </div>
+          
+                </div>
+                <div class="d-flex justify-content-center mb-1">
+                  <button type="button" class="btnContactSubmit"  >{{Members[0].score}}</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      <div class="podium__rank first">
+        <svg class="podium__number" viewBox="0 0 27.476 75.03" xmlns="http://www.w3.org/2000/svg">
+        <g transform="matrix(1, 0, 0, 1, 214.957736, -43.117417)">
+          <path class="st8" d="M -198.928 43.419 C -200.528 47.919 -203.528 51.819 -207.828 55.219 C -210.528 57.319 -213.028 58.819 -215.428 60.019 L -215.428 72.819 C -210.328 70.619 -205.628 67.819 -201.628 64.119 L -201.628 117.219 L -187.528 117.219 L -187.528 43.419 L -198.928 43.419 L -198.928 43.419 Z" style="fill: #000;"/>
+        </g>
+      </svg>
+      </div>
+  </div>
+    <div class="podium__item">
+        <div class="col-lg-4 col-sm-12 col-md-6  mb-1  mb-4 " *ngIf="Members && Members[2] && Members[2].rank==3" >
+            <div class="card mb-1" style="width: 200px;">
+              <div class="card-body text-center ">
+                <div class="d-flex justify-content-between p-2">
+          
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+                    class="rounded-circle img-fluid" style="width: 50px;">
+                  <div>
+                    <p class="my-1">{{Members[2].name}}</p>
+                    <p class="text-muted mb-1">{{Members[2].nationality}}</p>
+                  </div>  
+                </div>
+                <div>
+                  <div class="d-flex justify-content-between">
+                    <p  class="text-muted mb-1">{{Members[2].identity}}</p>
+                    <p>{{Members[2].identityNumber}}</p>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                      <p>date</p>
+                      <p  class="text-muted mb-1">{{Members[2].accessionDate}}</p>
+                  </div>
+          
+                </div>
+                <div class="d-flex justify-content-center mb-1">
+                  <button type="button" class="btnContactSubmit"  >{{Members[2].score}}</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      <div class="podium__rank third">3</div>
+    </div>
+</div>  

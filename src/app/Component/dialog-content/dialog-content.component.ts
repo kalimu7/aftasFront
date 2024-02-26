@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+
 import { Competition } from 'src/app/Model/competition';
 import { CompetitionService } from 'src/app/Service/competition.service';
 
@@ -10,11 +13,12 @@ import { CompetitionService } from 'src/app/Service/competition.service';
   styleUrls: ['./dialog-content.component.css'],
   
 })
-export class DialogContentComponent implements OnInit{
-  constructor(private fb :FormBuilder,private service:CompetitionService){}
+export class DialogContentComponent implements OnInit {
+  constructor(private fb :FormBuilder,private service:CompetitionService,private router : Router,private toastr : ToastrService){}
   myForm!:FormGroup;
 
   compet =  new Competition();
+  
   ngOnInit(): void {
     
     this.myForm = this.fb.group({
@@ -45,30 +49,43 @@ export class DialogContentComponent implements OnInit{
 
   Submit() {
     if (this.myForm.valid) {
-      // Form is valid, handle the submission here
-      //console.log('Form data submitted:', this.myForm.value);
+      
       this.compet = this.myForm.value;
       console.log(this.compet);
       this.service.InsertCompetition(this.compet).subscribe((res)=>{
         console.log(res);
         console.log("inseted");
+        this.showSuccess();
+        setTimeout(() => {
+          this.navigateToCompetition();
+        }, 1500);
         // this.ShowSucess("inserted successfully");
       },(err)=>{
-        // this.showFailure("something wrong");
+        
         console.log(err);
+        err.error.errors.forEach((errorMessage: string) => {
+          this.showFailure(errorMessage);
+        });
+        
       });
     } else {
-      // Form is invalid, display an error notification or handle as needed
-      console.log('Form data is invalid. Please check the fields.');
-      // this.showFailure("Form data is invalid. Please check the fields.");
+      
+      this.showFailure('Form data is invalid. Please check the fields.');
     }
   }
 
-  // ShowSucess(message : any){
-  //   this.toast.success(message, 'Toastr fun!');
-  // }
-  // showFailure(message : any){
-  //   this.toast.error(message,'error');
-  // }
+  showSuccess() {
+    this.toastr.success('Comeptition Created successfully', 'Toastr fun!',{ timeOut: 10000 });
+  }
+  showFailure(message : any){
+    this.toastr.error(message,'error');
+  }
+
+
+  navigateToCompetition() {
+    this.router.navigate([`dashbord/competition`]).then(()=>{
+      window.location.reload();
+    });
+  }
 
 }

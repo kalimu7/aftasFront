@@ -1,0 +1,69 @@
+<div class="p-2 overflow-x-hidden container">
+
+    <h3 class="text-danger"> Dashbord Manager </h3>
+    
+    
+ 
+    <!-- <p *ngIf="isLoading | async" > is Loading ...</p> -->
+    <!-- <p *ngIf="error | async" class="text-danger" > {{error | async}}</p> -->
+
+    <div class=" mb-4">
+        <div class="card-body">  
+            
+            <div class="row">
+            
+                <div class="col-md-12">
+                
+                    <div class="input-group md-form form-sm form-2 pl-0">
+                        <input class="form-control my-0 py-1 pl-3 purple-border" type="text" placeholder="search an offer" aria-label="Search">
+                        <span class="input-group-addon waves-effect purple lighten-2 p-2"  id="basic-addon1" ><fa-icon [icon]="fsearch " class="ic"></fa-icon></span> 
+                    </div>
+                </div>
+            
+            </div>
+            
+            
+            <table class="table table-striped">
+                
+                <thead>
+                    <tr>
+                        <th class="text-center" >Name</th>
+                        <th class="text-center" >email</th>
+                        <th class="text-center" >Role</th>
+                        <th class="text-center" >Status</th>
+                        <th class="text-center" >action</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    
+
+                    <ng-container  >
+                        
+                    <tr *ngFor="let acc of account">
+
+                        <td class="text-center" >{{acc.name}} {{acc.familyName}}</td>
+                        <td class="text-center" >{{acc.familyName}}</td>
+                        <td class="text-center" >{{acc.role}}</td>
+                        <td   class="text-center"   ><span class="badge  rounded-3" > Approved</span></td>
+                        <td class="text-center "><button class="btn btn-primary"  > Approuve </button></td>
+                        
+                    </tr>
+
+                    
+                        </ng-container>
+                    
+                </tbody>
+                <!-- <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[3,6,10,15]" aria-label="Select page"
+                    (page)="onPageChange($event)" >
+                </mat-paginator> -->
+
+            </table>
+            
+        </div>
+    </div>
+
+    <!-- <pre>{{ candidates$ | async | json }}</pre> -->
+    
+</div>
+
